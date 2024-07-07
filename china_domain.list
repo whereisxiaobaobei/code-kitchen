@@ -1,6 +1,4 @@
 #!name=direct_list
-#!homepage=https://github.com/GMOogway/shadowrocket-rules
-#!desc=Rules:80838 Created:07-07 06:35 Publisher:GMOogway
 [Rule]
 DOMAIN-SUFFIX,natapp1.cc,DIRECT
 DOMAIN-SUFFIX,anytesting.com,DIRECT
