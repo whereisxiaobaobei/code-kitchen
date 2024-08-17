@@ -1,26 +1,29 @@
 #!/bin/bash
 
-# 检测操作系统类型并安装 bc（如果尚未安装）
-install_bc() {
-    if ! command -v bc &> /dev/null; then
-        echo "bc is not installed. Attempting to install..."
+# 检测操作系统类型并安装 bc 和 vnstat（如果尚未安装）
+install_tools() {
+    if ! command -v bc &> /dev/null || ! command -v vnstat &> /dev/null; then
+        echo "Installing necessary tools..."
+
         if [ -f /etc/os-release ]; then
             . /etc/os-release
             distro=$ID
         else
-            echo "Unsupported operating system. Please install bc manually."
+            echo "Unsupported operating system. Please install bc and vnstat manually."
             exit 1
         fi
 
         case "$distro" in
             ubuntu|debian)
-                sudo apt-get update && sudo apt-get install -y bc
+                sudo apt-get update && sudo apt-get upgrade -y
+                sudo apt-get install -y bc vnstat
                 ;;
             centos|rocky|fedora|rhel)
-                sudo yum install -y bc
+                sudo yum update -y && sudo yum upgrade -y
+                sudo yum install -y bc vnstat
                 ;;
             *)
-                echo "Unsupported operating system: $distro. Please install bc manually."
+                echo "Unsupported operating system: $distro. Please install bc and vnstat manually."
                 exit 1
                 ;;
         esac
@@ -37,7 +40,7 @@ interface_name=$1
 traffic_limit=$2
 
 # 调用安装函数
-install_bc
+install_tools
 
 # 核心功能部分
 check_traffic() {
