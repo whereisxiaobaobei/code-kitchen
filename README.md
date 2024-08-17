@@ -8,6 +8,7 @@
 ```bash
 wget -O monitor_outbound_traffic.sh https://raw.githubusercontent.com/whereisxiaobaobei/code-kitchen/main/monitor_outbound_traffic.sh && chmod +x monitor_outbound_traffic.sh && ./monitor_outbound_traffic.sh ens4 200
 
+```bash
 wget -O monitoring_of_bidirectional_traffic.sh https://raw.githubusercontent.com/whereisxiaobaobei/code-kitchen/main/monitoring_of_bidirectional_traffic.sh && chmod +x monitoring_of_bidirectional_traffic.sh && ./monitoring_of_bidirectional_traffic.sh ens4 200
 
 # 监控VPS双向流量脚本
