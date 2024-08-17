@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# 检测操作系统类型并安装 bc 和 vnstat（如果尚未安装）
+install_tools() {
+    if ! command -v bc &> /dev/null || ! command -v vnstat &> /dev/null; then
+        echo "Installing necessary tools..."
+
+        if [ -f /etc/os-release ]; then
+            . /etc/os-release
+            distro=$ID
+        else
+            echo "Unsupported operating system. Please install bc and vnstat manually."
+            exit 1
+        fi
+
+        case "$distro" in
+            ubuntu|debian)
+                sudo apt-get update && sudo apt-get upgrade -y
+                sudo apt-get install -y bc vnstat
+                ;;
+            centos|rocky|fedora|rhel)
+                sudo yum update -y && sudo yum upgrade -y
+                sudo yum install -y bc vnstat
+                ;;
+            *)
+                echo "Unsupported operating system: $distro. Please install bc and vnstat manually."
+                exit 1
+                ;;
+        esac
+    fi
+}
+
+# 检查输入参数
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Usage: $0 <interface> <traffic_limit_in_GB>"
+    exit 1
+fi
+
+interface_name=$1
+traffic_limit=$2
+
+# 调用安装函数
+install_tools
+
+# 核心功能部分
+check_traffic() {
+    # 更新网卡记录
+    vnstat -i "$interface_name"
+
+    # 获取本月的出站流量（TX）和入站流量（RX）
+    TX_BYTES=$(vnstat --oneline b -i "$interface_name" | awk -F';' '{print $10}')
+    RX_BYTES=$(vnstat --oneline b -i "$interface_name" | awk -F';' '{print $9}')
+
+    # 检查是否获取到数据
+    if [[ -z "$TX_BYTES" ]] || [[ -z "$RX_BYTES" ]]; then
+        echo "Error: Not enough data available yet."
+        exit 1
+    fi
+
+    # 将出站流量和入站流量转换为GB，并计算总流量
+    TX_GB=$(echo "scale=2; $TX_BYTES / 1073741824" | bc)
+    RX_GB=$(echo "scale=2; $RX_BYTES / 1073741824" | bc)
+    TOTAL_GB=$(echo "scale=2; $TX_GB + $RX_GB" | bc)
+
+    # 检查转换后的流量是否为有效数字（允许小于 1 的小数）
+    if ! [[ "$TOTAL_GB" =~ ^[0-9]*\.?[0-9]+$ ]]; then
+        echo "Error: Invalid traffic data. TX: $TX_BYTES, RX: $RX_BYTES, Total: $TOTAL_GB"
+        exit 1
+    fi
+
+    echo "Current month's total traffic (inbound + outbound): $TOTAL_GB GB"
+
+    # 比较总流量是否超过限制
+    if (( $(echo "$TOTAL_GB > $traffic_limit" | bc -l) )); then
+        echo "Traffic limit exceeded. Shutting down..."
+        sudo /usr/sbin/shutdown -h now
+    else
+        echo "Traffic is within limits."
+    fi
+}
+
+# 执行一次流量检查
+check_traffic
+
+# 自动添加cron任务
+cron_job="*/3 * * * * /bin/bash $(realpath $0) $interface_name $traffic_limit >> /var/log/traffic_monitor.log 2>&1"
+
+# 检查是否已经存在相同的cron任务
+(crontab -l 2>/dev/null | grep -Fv "$cron_job"; echo "$cron_job") | crontab -
