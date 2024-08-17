@@ -12,5 +12,5 @@ wget -O monitor_outbound_traffic.sh https://raw.githubusercontent.com/whereisxia
 例如网卡名称是ens4,双向流量达到200G后自动关机,请运行以下命令:
 bash
 wget -O monitoring_of_bidirectional_traffic https://raw.githubusercontent.com/whereisxiaobaobei/code-kitchen/main/monitoring_of_bidirectional_traffic && chmod +x monitoring_of_bidirectional_traffic && ./monitoring_of_bidirectional_traffic ens4 200
-、、、
+```
 
