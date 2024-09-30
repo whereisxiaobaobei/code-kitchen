@@ -14,3 +14,7 @@ wget -O monitor_outbound_traffic.sh https://raw.githubusercontent.com/whereisxia
 wget -O monitoring_of_bidirectional_traffic https://raw.githubusercontent.com/whereisxiaobaobei/code-kitchen/main/monitoring_of_bidirectional_traffic && chmod +x monitoring_of_bidirectional_traffic && ./monitoring_of_bidirectional_traffic ens4 200
 ```
 
+# 安装最新版nginx脚本
+```bash
+wget -O install_nginx.sh https://raw.githubusercontent.com/whereisxiaobaobei/code-kitchen/refs/heads/main/install_nginx.sh && chmod +x install_nginx.sh && ./install_nginx.sh
+```
