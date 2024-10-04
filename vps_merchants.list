@@ -10,7 +10,6 @@ DOMAIN-SUFFIX,akile.io
 DOMAIN-SUFFIX,saltyfish.io
 DOMAIN-SUFFIX,sharon.io
 DOMAIN-SUFFIX,zgovps.com
-DOMAIN-KEYWORD,zgovps
 DOMAIN-SUFFIX,bytevirt.com
 DOMAIN-SUFFIX,vps.hosting
 DOMAIN-SUFFIX,wap.ac
@@ -23,8 +22,9 @@ DOMAIN-SUFFIX,racknerd.com
 DOMAIN-SUFFIX,zenlayer.com
 DOMAIN-SUFFIX,cloudcone.com
 DOMAIN-SUFFIX,client.faconhost.com
-DOMAIN-KEYWORD,bage
+DOMAIN-SUFFIX,bagevm.com
+DOMAIN-SUFFIX,bagevm.net
 DOMAIN-SUFFIX,vkvm.info
-DOMAIN-SUFFIX,sharon.io
 DOMAIN-SUFFIX,greencloudvps.com
 DOMAIN-SUFFIX,khanwebhost.com
+DOMAIN-SUFFIX,pasyun.com
