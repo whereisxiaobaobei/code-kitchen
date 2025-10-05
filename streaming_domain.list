@@ -1,4 +1,4 @@
-# netflix
+# Netflix
 DOMAIN-SUFFIX,fast.com
 DOMAIN-SUFFIX,netflix.ca
 DOMAIN-SUFFIX,netflix.com
@@ -23,7 +23,7 @@ DOMAIN-SUFFIX,netflixdnstest8.com
 DOMAIN-SUFFIX,netflixdnstest9.com
 DOMAIN-SUFFIX,netflixdnstest10.com
 
-# disney
+# Disney
 DOMAIN-SUFFIX,disney.asia
 DOMAIN-SUFFIX,disney.be
 DOMAIN-SUFFIX,disney.bg
@@ -145,3 +145,42 @@ DOMAIN-SUFFIX,streamingdisney.net
 DOMAIN-SUFFIX,thestationbymaker.com
 DOMAIN-SUFFIX,thisispolaris.com
 DOMAIN-SUFFIX,watchdisneyfe.com
+
+# Prime Video
+DOMAIN-SUFFIX, aiv-cdn.net
+DOMAIN-SUFFIX, amazonprimevideos.com
+DOMAIN-SUFFIX, amazonvideo.cc
+DOMAIN-SUFFIX, amazonvideo.com
+DOMAIN-SUFFIX, prime-video.com
+DOMAIN-SUFFIX, primevideo.cc
+DOMAIN-SUFFIX, primevideo.com
+DOMAIN-SUFFIX, primevideo.info
+DOMAIN-SUFFIX, primevideo.org
+DOMAIN-SUFFIX, primevideo.tv
+
+# HBO
+DOMAIN-SUFFIX, brightline.tv
+DOMAIN-SUFFIX, cinemax.com
+DOMAIN-SUFFIX, discomax.com
+DOMAIN-SUFFIX, forthethrone.com
+DOMAIN-SUFFIX, hbo.com
+DOMAIN-SUFFIX, hboasia.com
+DOMAIN-SUFFIX, hbogo.co.th
+DOMAIN-SUFFIX, hbogo.com
+DOMAIN-SUFFIX, hbogo.eu
+DOMAIN-SUFFIX, hbogoasia.com
+DOMAIN-SUFFIX, hbogoasia.hk
+DOMAIN-SUFFIX, hbogoasia.id
+DOMAIN-SUFFIX, hbogoasia.ph
+DOMAIN-SUFFIX, hbogoasia.sg
+DOMAIN-SUFFIX, hbogoasia.tw
+DOMAIN-SUFFIX, hbomax.com
+DOMAIN-SUFFIX, hbomaxcdn.com
+DOMAIN-SUFFIX, hbonow.com
+DOMAIN-SUFFIX, max.com
+DOMAIN-SUFFIX, maxgo.com
+DOMAIN-SUFFIX, hbo.com.c.footprint.net
+DOMAIN-SUFFIX, hbo.com.edgesuite.net
+DOMAIN-SUFFIX, hbo.map.fastly.net
+DOMAIN-SUFFIX, hbomax-images.warnermediacdn.com
+DOMAIN-SUFFIX, hbomaxdash.s.llnwi.net
