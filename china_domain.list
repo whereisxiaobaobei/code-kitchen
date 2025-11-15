@@ -1,6 +1,7 @@
 # 直连域名
 
 [Rule]
+DOMAIN-SUFFIX,pt.jyoom.com
 DOMAIN-SUFFIX,natapp1.cc
 DOMAIN-SUFFIX,anytesting.com
 DOMAIN-SUFFIX,mdouvip.com
@@ -80833,4 +80834,3 @@ DOMAIN-SUFFIX,senser.group
 DOMAIN-SUFFIX,osakeurunara.com
 DOMAIN-SUFFIX,10pkpk.com
 DOMAIN-SUFFIX,lemeitu.com
-DOMAIN-SUFFIX,pt.jyoom.com
