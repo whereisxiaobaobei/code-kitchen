@@ -1,6 +1,7 @@
 # 直连域名
 
 [Rule]
+DOMAIN-SUFFIX,ahdohpiechei.com
 DOMAIN-SUFFIX,pt.jyoom.com
 DOMAIN-SUFFIX,natapp1.cc
 DOMAIN-SUFFIX,anytesting.com
