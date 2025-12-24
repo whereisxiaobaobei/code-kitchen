@@ -1,7 +1,6 @@
 # 直连域名
 
 [Rule]
-DOMAIN-SUFFIX,ahdohpiechei.com
 DOMAIN-SUFFIX,pt.jyoom.com
 DOMAIN-SUFFIX,natapp1.cc
 DOMAIN-SUFFIX,anytesting.com
@@ -31068,7 +31067,7 @@ DOMAIN-SUFFIX,66mobi.com
 DOMAIN-SUFFIX,peixune.com
 DOMAIN-SUFFIX,boyoucy.com
 DOMAIN-SUFFIX,viplao.com
-DOMAIN-SUFFIX,ooppoo.com
+DOMAIN-SUFFIX,ahdohpiechei.com
 DOMAIN-SUFFIX,zhaoquanwang.vip
 DOMAIN-SUFFIX,59yx.com
 DOMAIN-SUFFIX,ideanote.cc
